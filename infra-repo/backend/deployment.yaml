@@ -17,6 +17,6 @@ spec:
         node-role: backend
       containers:
       - name: backend
-        image: mt1mngnw/contactly-backend:v1
+        image: mt1mngnw/contactly-backend:a655cea
         ports:
         - containerPort: 80

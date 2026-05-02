@@ -17,6 +17,6 @@ spec:
         node-role: frontend
       containers:
       - name: frontend
-        image: mt1mngnw/contactly-frontend:v2
+        image: mt1mngnw/contactly-frontend:a655cea
         ports:
         - containerPort: 80
