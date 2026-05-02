@@ -4,7 +4,12 @@ metadata:
   name: backend-deployment
   namespace: contactly
 spec:
-  replicas: 1
+  replicas: 2
+  strategy:                
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1           # How many EXTRA pods can be created during the update?
+      maxUnavailable: 0
   selector:
     matchLabels:
       app: backend
@@ -18,5 +23,6 @@ spec:
       containers:
       - name: backend
         image: mt1mngnw/contactly-backend:2cd2901
+        imagePullPolicy: Always
         ports:
         - containerPort: 80
