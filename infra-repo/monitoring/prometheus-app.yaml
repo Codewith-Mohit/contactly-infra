@@ -13,11 +13,29 @@ spec:
     targetRevision: 58.3.1
 
     helm:
-      releaseName: prometheus
       values: |
         grafana:
-          service:
-            type: NodePort
+          adminPassword: admin123
+
+        # Disable components that require real cloud nodes
+        nodeExporter:
+          enabled: false
+
+        kubelet:
+          enabled: false
+
+        kubeControllerManager:
+          enabled: false
+
+        kubeScheduler:
+          enabled: false
+
+        kubeProxy:
+          enabled: false
+
+        prometheus:
+          prometheusSpec:
+            serviceMonitorSelectorNilUsesHelmValues: false
 
   destination:
     server: https://kubernetes.default.svc
@@ -27,3 +45,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
