@@ -22,7 +22,7 @@ spec:
         node-role: backend
       containers:
       - name: backend
-        image: mt1mngnw/contactly-backend:bdc01e2
+        image: mt1mngnw/contactly-backend:6ab2f47
         imagePullPolicy: Always
         ports:
         - containerPort: 80
