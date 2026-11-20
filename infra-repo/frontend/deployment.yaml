@@ -22,7 +22,7 @@ spec:
         node-role: frontend
       containers:
       - name: frontend
-        image: mt1mngnw/contactly-frontend:6ab2f47
+        image: mt1mngnw/contactly-frontend:1388f30
         imagePullPolicy: Always
         ports:
         - containerPort: 80
